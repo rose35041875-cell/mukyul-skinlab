@@ -83,6 +83,16 @@ p.sub.left{text-align:left; margin-left:0}
 }
 .notice b{color:var(--gold-lt); font-weight:800}
 
+/* 샘플 단계 안내 + 의견 남기기 — 모든 페이지 최상단 */
+.fbbar{background:var(--gold); text-align:center}
+.fbbar a{
+  display:block; padding:.6rem 1.2rem; color:#fff; text-decoration:none;
+  font-size:.82rem; font-weight:700; letter-spacing:.01em;
+}
+.fbbar a:hover{background:var(--gold-dk)}
+.fbbar b{font-weight:800}
+.fbbar u{text-underline-offset:.2em}
+
 /* ══ 내비 ══ */
 nav.top{
   position:sticky; top:0; z-index:60; background:rgba(248,245,238,.9);
@@ -122,6 +132,12 @@ nav.top a.lnk.act{color:var(--gold-dk); border-bottom-color:var(--gold)}
   letter-spacing:-.025em; text-wrap:balance;
 }
 .hero h1 em{font-style:normal; color:var(--gold); position:relative}
+.hero .lead-svc{
+  display:inline-block; color:var(--ink); font-size:1.06rem; font-weight:700;
+  margin:0 auto 1rem; padding:.75rem 1.4rem; border-radius:99px;
+  background:var(--gold-bg); border:1px solid var(--line); line-height:1.7;
+}
+.hero .lead-svc b{color:var(--gold-dk); font-weight:800}
 .hero .tag{color:var(--ink-2); font-size:1.02rem; margin:0 auto 2.3rem; max-width:30rem; text-wrap:pretty}
 .hero .acts{display:flex; gap:.6rem; justify-content:center; flex-wrap:wrap}
 

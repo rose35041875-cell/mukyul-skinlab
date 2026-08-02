@@ -47,7 +47,7 @@ $("plist").innerHTML = PROGRAMS.map((p,i)=>`
   <button class="prow" onclick="openProgram(${i})" aria-label="${p.name} 상세 보기">
     <span class="pno"><span class="n serif">${p.lv}</span><span class="l">LEVEL</span></span>
     <span class="pb">
-      <span class="pn serif" style="display:block">${p.name}<em>${p.kr}</em></span>
+      <span class="pn serif" style="display:block">${p.kr}<em>${p.name}</em></span>
       <span class="pd" style="display:block">${p.desc}</span>
       <span class="pf">${p.forWhom} · ${p.min}분</span>
       <span class="more">상세 보기 →</span>
@@ -65,8 +65,8 @@ function openProgram(i){
   lastFocus = document.activeElement;
   $("sheet").innerHTML = `
     <div class="mlv">LEVEL ${p.lv}</div>
-    <h3>${p.name}</h3>
-    <div class="mkr">${p.kr} · ${p.min}분</div>
+    <h3>${p.kr}</h3>
+    <div class="mkr">${p.name} · ${p.min}분</div>
     <p style="font-size:.95rem;color:var(--ink-2);margin:0;line-height:1.85">${p.detail}</p>
     <div class="mprice">
       <div><div class="k">1회</div><div class="v">${won(p.price)}원</div></div>
@@ -81,7 +81,7 @@ function openProgram(i){
     <div class="mnote">${p.caution}</div>
     <div class="mclose">
       <button class="btn ghost" onclick="closeModal()">닫기</button>
-      <a class="btn" style="text-decoration:none" href="/reserve.html?prog=${encodeURIComponent(p.name)}" onclick="closeModal()">이 프로그램 예약 문의</a>
+      <a class="btn" style="text-decoration:none" href="reserve.html?prog=${encodeURIComponent(p.name)}" onclick="closeModal()">이 프로그램 예약 문의</a>
     </div>`;
   $("modal").classList.add("on");
   document.body.style.overflow = "hidden";
@@ -96,7 +96,7 @@ document.addEventListener("keydown", e=>{ if(e.key === "Escape" && $("modal").cl
 
 /* 예약 셀렉트 */
 $("bProg").innerHTML = `<option value="">상담 후 결정하겠습니다</option>` +
-  PROGRAMS.map(p=>`<option value="${p.name}">LEVEL ${p.lv} · ${p.name} (${p.kr}) — ${won(p.price)}원</option>`).join("");
+  PROGRAMS.map(p=>`<option value="${p.name}">LEVEL ${p.lv} · ${p.kr} (${p.name}) — ${won(p.price)}원</option>`).join("");
 
 /* ══════════════════════════════════════════════
    관리 과정
@@ -147,7 +147,7 @@ $("principles").innerHTML = PRINCIPLES.map(p=>`
 const FEE = [];
 FEE.push({sec:"PROGRAM · 관리 프로그램"});
 PROGRAMS.forEach(p=>FEE.push({
-  a:`LEVEL ${p.lv} · ${p.name}`, b:`${p.kr} · ${p.min}분`, c:p.price, d:p.ten
+  a:`LEVEL ${p.lv} · ${p.kr}`, b:`${p.name} · ${p.min}분`, c:p.price, d:p.ten, first:true
 }));
 FEE.push({sec:"ADD-ON · 선택 추가"});
 FEE.push({a:"미니 돔 사우나", b:"단품", c:35000, d:null});
@@ -161,11 +161,14 @@ FEE.push({a:"피부 측정", b:"방문 시 매회", c:0, d:null});
 FEE.push({a:"1:1 상담", b:"단계 결정 · 홈케어 안내", c:0, d:null});
 
 $("feeBody").innerHTML = FEE.map(f=>{
-  if(f.sec) return `<tr class="sec"><td colspan="4">${f.sec}</td></tr>`;
+  if(f.sec) return `<tr class="sec"><td colspan="5">${f.sec}</td></tr>`;
   const price = f.c === 0 ? `<span class="g">무료</span>` : won(f.c);
+  /* 오픈 프로모션: 첫 방문 30% 할인 실결제액 */
+  const first = f.first ? `<b style="color:var(--coral,#B04527)">${won(Math.round(f.c * 0.7))}</b>` : "—";
   return `<tr>
     <td>${f.a}</td><td style="color:var(--ink-2)">${f.b}</td>
     <td class="n">${price}</td>
+    <td class="n">${first}</td>
     <td class="n g">${f.d ? won(f.d) : "—"}</td></tr>`;
 }).join("");
 
@@ -379,8 +382,8 @@ function renderResult(){
   $("qbox").innerHTML = `
     <div class="result">
       <div class="rlv">추천 단계 · LEVEL ${prog.lv}</div>
-      <div class="rname serif">${prog.name}</div>
-      <div class="rkr">${prog.kr}</div>
+      <div class="rname serif">${prog.kr}</div>
+      <div class="rkr">${prog.name}</div>
       <div class="rwhy">${reasons.map(r=>`· ${r}`).join("<br>")}</div>
       <div class="rmeta">
         <div><div class="k">1회</div><div class="v">${won(prog.price)}원</div></div>
@@ -390,7 +393,7 @@ function renderResult(){
       <div class="rbtns">
         <button class="btn ghost" onclick="restart()">다시 측정</button>
         <button class="btn ghost" onclick="openProgram(${idx})">이 프로그램 상세</button>
-        <a class="btn" style="text-decoration:none" href="/reserve.html?prog=${encodeURIComponent(prog.name)}">예약 문의</a>
+        <a class="btn" style="text-decoration:none" href="reserve.html?prog=${encodeURIComponent(prog.name)}">예약 문의</a>
       </div>
       <div class="rnote">이 결과는 답해주신 내용을 바탕으로 한 <b>제안</b>입니다.<br>
         실제 단계는 방문하셔서 피부를 측정한 뒤 상담을 통해 최종 결정합니다.</div>
@@ -638,3 +641,112 @@ window.addEventListener("scroll", ()=>{
 })();
 applyQueryProgram();
 updatePreview();
+
+/* ══════════════════════════════════════════════
+   의견 남기기 — 8문항
+   ══════════════════════════════════════════════ */
+const FB_Q = [
+  { k:"first", q:"첫 화면을 보고 <b>여기가 무엇을 하는 곳인지</b> 바로 아셨나요?", type:"pick",
+    opts:["바로 알았어요", "조금 헷갈렸어요", "전혀 모르겠어요"] },
+  { k:"level", q:"<b>피부 레벨 측정</b>을 해보셨나요? 결과가 그럴듯했나요?", type:"pick",
+    opts:["해봤고 그럴듯했어요", "해봤는데 애매했어요", "안 해봤어요 · 있는 줄 몰랐어요"] },
+  { k:"price", q:"가격을 보고 어떤 느낌이셨나요?", type:"pick",
+    opts:["비싸요", "적당해요", "싼 편이에요", "판단이 안 서요"] },
+  { k:"clear", q:"프로그램 <b>다섯 가지의 차이</b>가 구분되셨나요?", type:"pick",
+    opts:["잘 구분됐어요", "비슷해 보였어요", "안 읽어봤어요"] },
+  { k:"member", q:"<b>회원권 계산기</b>를 보고 어떤 게 유리한지 아셨나요?", type:"pick",
+    opts:["바로 알았어요", "계산은 봤는데 잘 모르겠어요", "못 봤어요"] },
+  { k:"trust", q:"이 가게를 <b>믿을 만하다</b>고 느끼셨나요?", type:"pick",
+    opts:["믿음이 갔어요", "보통이에요", "잘 모르겠어요"] },
+  { k:"visit", q:"압구정 근처라면 <b>한 번 가보고 싶으신가요?</b>", type:"pick",
+    opts:["가보고 싶어요", "고민될 것 같아요", "생각 없어요"] },
+  { k:"free", q:"고쳤으면 하는 점, 이상했던 점을 편하게 적어주세요", type:"text",
+    ph:"불편했던 점 · 이해 안 된 부분 · 빠진 것 같은 정보 · 무엇이든" }
+];
+const fbAns = {};
+let fbStep = 0;
+
+function fbRender(){
+  const box = document.getElementById("fbBox");
+  if(!box) return;
+  const bar = document.getElementById("fbBar");
+  if(bar) bar.style.width = (fbStep / FB_Q.length * 100) + "%";
+
+  if(fbStep >= FB_Q.length){ fbResult(); return; }
+  const q = FB_Q[fbStep];
+
+  if(q.type === "text"){
+    box.innerHTML =
+      '<div class="qno">' + (fbStep+1) + ' / ' + FB_Q.length + '</div>' +
+      '<h3 class="qtext serif">' + q.q + '</h3>' +
+      '<textarea id="fbText" placeholder="' + q.ph + '">' + (fbAns[q.k] || "") + '</textarea>' +
+      '<button class="btn" style="margin-top:1rem" onclick="fbPickText()">다 적었어요</button>' +
+      '<div class="qnav"><button onclick="fbBack()">이전 질문</button></div>';
+    return;
+  }
+  box.innerHTML =
+    '<div class="qno">' + (fbStep+1) + ' / ' + FB_Q.length + '</div>' +
+    '<h3 class="qtext serif">' + q.q + '</h3>' +
+    '<div class="opts">' +
+      q.opts.map(function(o, i){ return '<button type="button" onclick="fbPick(' + i + ')">' + o + '</button>'; }).join("") +
+    '</div>' +
+    (fbStep > 0 ? '<div class="qnav"><button onclick="fbBack()">이전 질문</button></div>' : "");
+}
+function fbPick(i){ const q = FB_Q[fbStep]; fbAns[q.k] = q.opts[i]; fbStep++; fbRender(); }
+function fbPickText(){
+  const el = document.getElementById("fbText");
+  fbAns[FB_Q[fbStep].k] = el ? el.value.trim() : "";
+  fbStep++; fbRender();
+}
+function fbBack(){ fbStep = Math.max(0, fbStep - 1); fbRender(); }
+function fbRestart(){
+  fbStep = 0;
+  Object.keys(fbAns).forEach(function(k){ delete fbAns[k]; });
+  fbRender();
+  const s = document.getElementById("feedback");
+  if(s) s.scrollIntoView({block:"start"});
+}
+
+function fbText(){
+  let s = "[MUKYUL SKIN LAB 샘플 홈페이지 의견]\n";
+  s += new Date().toLocaleDateString("ko-KR") + "\n\n";
+  FB_Q.forEach(function(q, i){
+    const a = fbAns[q.k];
+    if(!a) return;
+    const label = q.q.replace(/<[^>]+>/g, "");
+    s += (i+1) + ". " + label + "\n   → " + a + "\n\n";
+  });
+  s += "— 홈페이지에서 자동으로 정리했습니다";
+  return s;
+}
+
+function fbResult(){
+  const box = document.getElementById("fbBox");
+  if(!box) return;
+  const bar = document.getElementById("fbBar");
+  if(bar) bar.style.width = "100%";
+  const answered = FB_Q.filter(function(q){ return fbAns[q.k]; }).length;
+  box.innerHTML =
+    '<div class="result">' +
+      '<div class="rlv">THANK YOU</div>' +
+      '<div class="rname serif" style="font-size:clamp(1.5rem,4.6vw,2.1rem)">고맙습니다</div>' +
+      '<div class="rkr">' + answered + '개 문항에 답해주셨어요</div>' +
+      '<div class="report-pre" style="text-align:left;margin-bottom:1.4rem">' +
+        fbText().replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;") +
+      '</div>' +
+      '<p class="rnote" style="margin-top:0;margin-bottom:1.2rem">' +
+        '아래 버튼을 누르면 내용이 복사되거나 공유창이 열립니다.<br>' +
+        '<b>카카오톡으로 보내주시면</b> 그대로 반영하겠습니다.</p>' +
+      '<div class="rbtns">' +
+        '<button class="btn ghost" onclick="fbRestart()">다시 답하기</button>' +
+        '<button class="btn ghost" onclick="copyText(fbText(),\'의견을 복사했어요\')">내용 복사</button>' +
+        '<button class="btn" onclick="fbShare()">카카오톡으로 보내기</button>' +
+      '</div>' +
+    '</div>';
+}
+function fbShare(){
+  const t = fbText();
+  if(navigator.share) navigator.share({ title:"MUKYUL 홈페이지 의견", text:t }).catch(function(){});
+  else copyText(t, "의견을 복사했어요 · 카카오톡에 붙여넣어 주세요");
+}
+if(document.getElementById("fbBox")) fbRender();
