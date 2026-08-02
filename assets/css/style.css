@@ -537,6 +537,26 @@ footer .fd{font-size:.75rem; color:var(--ink-3); line-height:1.95}
 @media (max-width:44rem){ .phgrid{grid-template-columns:1fr 1fr} }
 /* 배포본에서 .ph 자리를 실제 이미지로 교체할 때 쓰는 스타일 */
 .phimg{width:100%; height:auto; display:block; border-radius:4px}
+
+/* 영상 */
+.vwrap{position:relative; border-radius:4px; overflow:hidden; background:var(--navy); max-width:44rem; margin:0 auto}
+.vwrap video{width:100%; height:auto; display:block}
+.vnote{
+  padding:.85rem 1.1rem; background:var(--gold-bg); border:1px solid var(--line); border-top:none;
+  border-radius:0 0 4px 4px; font-size:.83rem; color:#6A5730; font-weight:600; line-height:1.7; text-align:center;
+}
+.vnote a{color:var(--gold-dk); font-weight:800}
+.vgrid{display:grid; gap:1.4rem}
+
+/* 영상 */
+.vwrap{position:relative; border-radius:4px; overflow:hidden; background:var(--navy); max-width:44rem; margin:0 auto}
+.vwrap video{width:100%; height:auto; display:block}
+.vnote{
+  padding:.85rem 1.1rem; background:var(--gold-bg); border:1px solid var(--line); border-top:none;
+  border-radius:0 0 4px 4px; font-size:.83rem; color:#6A5730; font-weight:600; line-height:1.7; text-align:center;
+}
+.vnote a{color:var(--gold-dk); font-weight:800}
+.vgrid{display:grid; gap:1.4rem}
 .phimg.sign{width:9rem; height:auto; border-radius:0}
 
 /* ══ 관리 전후 가이드 ══ */
