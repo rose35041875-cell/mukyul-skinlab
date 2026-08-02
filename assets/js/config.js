@@ -15,6 +15,7 @@ const CONFIG = {
     hoursShort: "10:00 – 20:00",
     kakaoNote:  "카카오톡 채널 개설 예정",
     bizInfo:    "MUKYUL SKIN LAB · 사업자 정보 기재 예정",
+    director:   "고수정",               // 대표 원장 성함
     url:        "https://example.com"    // ← 실제 도메인으로 교체
   },
 

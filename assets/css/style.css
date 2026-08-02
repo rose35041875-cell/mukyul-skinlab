@@ -304,6 +304,13 @@ nav.top a.lnk.act{color:var(--gold-dk); border-bottom-color:var(--gold)}
 }
 .director .db{flex:1; min-width:15rem}
 .director .dt{font-size:1.1rem; font-weight:700; margin-bottom:.5rem}
+.director .dname{
+  font-family:"Nanum Myeongjo","바탕",Georgia,serif; font-weight:400;
+  font-size:1.45rem; color:var(--gold-lt); letter-spacing:.06em; margin-left:.45rem;
+}
+.director .dsign{
+  font-size:1.9rem; color:var(--gold-lt); letter-spacing:.14em; line-height:1.25; margin-top:.1rem;
+}
 .director .dq{font-size:.94rem; color:#C3CDDC; line-height:1.9; text-wrap:pretty}
 .director .dq em{font-style:normal; color:var(--gold-lt)}
 
