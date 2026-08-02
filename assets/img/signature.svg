@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 140"
+   width="400" height="140" role="img" aria-label="친필 서명 자리">
+  <path d="M 30 92 C 54 30, 76 30, 84 76 C 92 116, 110 114, 122 58 C 134 26, 154 38, 158 86
+           C 166 44, 194 32, 212 64 C 230 96, 256 90, 274 52 C 290 20, 320 32, 334 70 L 368 56"
+        fill="none" stroke="#C9AE79" stroke-width="3.2" stroke-linecap="round" opacity=".85"/>
+  <path d="M 118 100 q 90 14 176 -6" fill="none" stroke="#C9AE79" stroke-width="1.6"
+        stroke-linecap="round" opacity=".45"/>
+  <text x="200" y="132" font-family="'Malgun Gothic',sans-serif" font-size="10"
+        fill="#AC8A4C" fill-opacity=".6" text-anchor="middle">친필 서명 자리 · 스캔본으로 교체</text>
+</svg>

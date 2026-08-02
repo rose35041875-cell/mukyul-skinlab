@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000"
+   role="img" aria-label="1인 관리룸 예시 그림">
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FCFAF5"/><stop offset="1" stop-color="#F2EDE2"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F2EDE2"/><stop offset="1" stop-color="#E9E2D2"/>
+    </linearGradient>
+    <radialGradient id="lamp" cx="50%" cy="0%" r="75%">
+      <stop offset="0" stop-color="#FFF6E4" stop-opacity=".95"/>
+      <stop offset="1" stop-color="#FFF6E4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="warm" cx="50%" cy="65%" r="60%">
+      <stop offset="0" stop-color="#F6DCB4" stop-opacity=".8"/>
+      <stop offset="1" stop-color="#F6DCB4" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="soft" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#F0EADC"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="560" fill="url(#wall)"/>
+  <rect y="560" width="1600" height="440" fill="url(#floor)"/>
+  <line x1="0" y1="560" x2="1600" y2="560" stroke="#DCD2BE" stroke-width="2"/>
+
+  <!-- 펜던트 조명 -->
+  <line x1="1140" y1="0" x2="1140" y2="150" stroke="#6E665C" stroke-width="2" opacity=".5"/>
+  <path d="M 1096 200 L 1140 150 L 1184 200 Z" fill="#FFFFFF" stroke="#DCD2BE" stroke-width="2.5"/>
+  <ellipse cx="1140" cy="330" rx="180" ry="180" fill="url(#lamp)"/>
+
+  <!-- 커튼 -->
+  <g stroke="#DCD2BE" stroke-width="2" fill="#FFFFFF" opacity=".9">
+    <path d="M 90 90 q 26 235 0 470 l 74 0 q -26 -235 0 -470 z"/>
+    <path d="M 164 90 q 26 235 0 470 l 74 0 q -26 -235 0 -470 z"/>
+  </g>
+  <line x1="70" y1="88" x2="260" y2="88" stroke="#6E665C" stroke-width="4" opacity=".45"/>
+
+  <!-- 관리 베드 (3/4 시점) -->
+  <path d="M 430 680 L 1240 620 L 1300 680 L 470 750 Z"
+        fill="url(#soft)" stroke="#DCD2BE" stroke-width="2.5"/>
+  <path d="M 470 750 L 1300 680 L 1300 716 L 470 786 Z"
+        fill="#F2EDE2" stroke="#DCD2BE" stroke-width="2"/>
+  <!-- 머리쪽 쿠션 -->
+  <ellipse cx="530" cy="668" rx="76" ry="30" fill="#FFFFFF" stroke="#DCD2BE" stroke-width="2.5"/>
+  <!-- 접힌 타월 -->
+  <rect x="1010" y="618" width="150" height="26" rx="13" fill="#FFFFFF" stroke="#DCD2BE" stroke-width="2"/>
+  <rect x="1030" y="596" width="112" height="24" rx="12" fill="#FFFFFF" stroke="#DCD2BE" stroke-width="2"/>
+  <!-- 다리 -->
+  <line x1="520" y1="786" x2="520" y2="890" stroke="#6E665C" stroke-width="5" opacity=".45"/>
+  <line x1="1250" y1="716" x2="1250" y2="822" stroke="#6E665C" stroke-width="5" opacity=".45"/>
+
+  <!-- 사이드 카트 -->
+  <rect x="1330" y="600" width="170" height="120" rx="6" fill="#FFFFFF" stroke="#DCD2BE" stroke-width="2.5"/>
+  <line x1="1330" y1="656" x2="1500" y2="656" stroke="#DCD2BE" stroke-width="2"/>
+  <rect x="1362" y="566" width="26" height="36" rx="4" fill="#EFE5D2" stroke="#AC8A4C" stroke-width="2"/>
+  <rect x="1400" y="574" width="20" height="28" rx="3" fill="#FFFFFF" stroke="#DCD2BE" stroke-width="2"/>
+  <circle cx="1450" cy="588" r="15" fill="none" stroke="#DCD2BE" stroke-width="2"/>
+
+  <!-- 화분 -->
+  <path d="M 250 860 l 22 -110 l 22 110 z" fill="#F2EDE2" stroke="#DCD2BE" stroke-width="2.5"/>
+  <g stroke="#AC8A4C" stroke-width="2.6" fill="none" opacity=".55" stroke-linecap="round">
+    <path d="M 272 750 q -46 -66 -14 -122"/>
+    <path d="M 272 750 q 40 -58 14 -114"/>
+    <path d="M 272 750 q -8 -80 6 -96"/>
+  </g>
+
+  
+  <text x="800" y="914" font-family="'Malgun Gothic',sans-serif" font-size="26"
+        font-weight="700" fill="#6E665C" text-anchor="middle">1인 관리룸</text>
+  <text x="800" y="946" font-family="'Malgun Gothic',sans-serif" font-size="15"
+        fill="#6E665C" fill-opacity=".6" text-anchor="middle">완전히 분리된 개별 공간에서 진행합니다</text>
+  
+  <g>
+    <rect x="28" y="28" width="150" height="30" rx="15" fill="#1B2A4A" opacity=".9"/>
+    <text x="103" y="48" font-family="'Malgun Gothic',sans-serif" font-size="13" font-weight="700"
+          fill="#C9AE79" text-anchor="middle">촬영 전 · 예시 그림</text>
+  </g>
+  <text x="1566" y="966" font-family="Georgia,'Batang',serif" font-size="30"
+        fill="#AC8A4C" fill-opacity=".38" text-anchor="end">靜</text>
+</svg>

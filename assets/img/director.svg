@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000"
+   width="800" height="1000" role="img" aria-label="대표 원장 예시 그림">
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FCFAF5"/><stop offset="1" stop-color="#F2EDE2"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F2EDE2"/><stop offset="1" stop-color="#E9E2D2"/>
+    </linearGradient>
+    <radialGradient id="lamp" cx="50%" cy="0%" r="75%">
+      <stop offset="0" stop-color="#FFF6E4" stop-opacity=".95"/>
+      <stop offset="1" stop-color="#FFF6E4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="warm" cx="50%" cy="65%" r="60%">
+      <stop offset="0" stop-color="#F6DCB4" stop-opacity=".8"/>
+      <stop offset="1" stop-color="#F6DCB4" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="soft" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#F0EADC"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="1000" fill="#1B2A4A"/>
+  <ellipse cx="400" cy="420" rx="300" ry="300" fill="#22314F"/>
+  <circle cx="400" cy="420" r="232" fill="none" stroke="#C9AE79" stroke-width="2" opacity=".5"/>
+
+  <!-- 인물 실루엣 -->
+  <circle cx="400" cy="330" r="86" fill="#2C3D5E"/>
+  <path d="M 230 600 q 170 -190 340 0 z" fill="#2C3D5E"/>
+  <!-- 가운 라펠 -->
+  <path d="M 348 455 L 400 545 L 452 455"
+        fill="none" stroke="#C9AE79" stroke-width="2.4" opacity=".55"/>
+
+  <text x="400" y="735" font-family="Georgia,'Batang',serif" font-size="52"
+        fill="#C9AE79" fill-opacity=".6" text-anchor="middle">無</text>
+  <line x1="340" y1="775" x2="460" y2="775" stroke="#C9AE79" stroke-width="1.4" opacity=".5"/>
+  <text x="400" y="835" font-family="'Malgun Gothic',sans-serif" font-size="24"
+        font-weight="700" fill="#E2E7EF" text-anchor="middle">대표 원장</text>
+  <text x="400" y="878" font-family="'Malgun Gothic',sans-serif" font-size="15"
+        fill="#93A2BC" text-anchor="middle">30년 · 피부과 · 성형외과</text>
+  <g><rect x="26" y="26" width="150" height="30" rx="15" fill="#0F1A2E" opacity=".85"/>
+  <text x="101" y="46" font-family="'Malgun Gothic',sans-serif" font-size="13" font-weight="700"
+        fill="#C9AE79" text-anchor="middle">촬영 전 · 예시 그림</text></g>
+</svg>

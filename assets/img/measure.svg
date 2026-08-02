@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000"
+     role="img" aria-label="측정실 예시 그림">
+  <defs>
+    <linearGradient id="wall" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FCFAF5"/><stop offset="1" stop-color="#F2EDE2"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#F2EDE2"/><stop offset="1" stop-color="#E9E2D2"/>
+    </linearGradient>
+    <radialGradient id="lamp" cx="50%" cy="0%" r="75%">
+      <stop offset="0" stop-color="#FFF6E4" stop-opacity=".95"/>
+      <stop offset="1" stop-color="#FFF6E4" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="warm" cx="50%" cy="65%" r="60%">
+      <stop offset="0" stop-color="#F6DCB4" stop-opacity=".8"/>
+      <stop offset="1" stop-color="#F6DCB4" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="soft" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#F0EADC"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="560" fill="url(#wall)"/>
+  <rect y="560" width="1600" height="440" fill="url(#floor)"/>
+  <line x1="0" y1="560" x2="1600" y2="560" stroke="#DCD2BE" stroke-width="2"/>
+
+  <!-- 벽면 조명 -->
+  <ellipse cx="800" cy="70" rx="520" ry="240" fill="url(#lamp)"/>
+  <line x1="500" y1="96" x2="1100" y2="96" stroke="#C9AE79" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- 측정 모니터 -->
+  <rect x="550" y="150" width="500" height="300" rx="10" fill="#FFFFFF" stroke="#DCD2BE" stroke-width="2.5"/>
+  <rect x="550" y="150" width="500" height="46" rx="10" fill="#F2EDE2"/>
+  <circle cx="572" cy="173" r="5" fill="#C9AE79"/>
+  <circle cx="590" cy="173" r="5" fill="#DCD2BE"/>
+  <text x="800" y="179" font-family="Georgia,serif" font-size="15" letter-spacing="4"
+        fill="#6E665C" fill-opacity=".7" text-anchor="middle">SKIN ANALYSIS</text>
+  <!-- 그래프 -->
+  <g transform="translate(610,330)">
+    <line x1="0" y1="0" x2="380" y2="0" stroke="#DCD2BE" stroke-width="1.5"/>
+    <line x1="0" y1="-56" x2="380" y2="-56" stroke="#DCD2BE" stroke-width="1" stroke-dasharray="4 6"/>
+    <path d="M 0 0 L 0.0 -5.0 L 5.5 -10.6 L 11.0 -14.1 L 16.5 -14.8 L 22.0 -12.8 L 27.5 -9.8 L 33.0 -7.1 L 38.5 -5.8 L 44.0 -5.4 L 49.5 -4.9 L 55.0 -2.7 L 60.5 1.6 L 66.0 7.3 L 71.5 12.8 L 77.0 16.2 L 82.5 16.4 L 88.0 13.6 L 93.5 9.3 L 99.0 5.2 L 104.5 2.8 L 110.0 2.1 L 115.5 2.2 L 121.0 1.5 L 126.5 -0.6 L 132.0 -4.2 L 137.5 -7.7 L 143.0 -9.6 L 148.5 -8.6 L 154.0 -5.0 L 159.5 0.0 L 165.0 4.4 L 170.5 6.5 L 176.0 6.1 L 181.5 3.9 L 187.0 1.5 L 192.5 0.2 L 198.0 0.3 L 203.5 1.1 L 209.0 1.0 L 214.5 -1.1 L 220.0 -5.2" fill="none" stroke="#AC8A4C" stroke-width="2.6" stroke-linejoin="round"/>
+  </g>
+  <g transform="translate(610,390)">
+    <rect x="0" y="-31" width="34" height="31" rx="3"
+        fill="#EFE5D2" stroke="#C9AE79" stroke-width="1.5"/><rect x="96" y="-44" width="34" height="44" rx="3"
+        fill="#EFE5D2" stroke="#C9AE79" stroke-width="1.5"/><rect x="192" y="-22.5" width="34" height="22.5" rx="3"
+        fill="#EFE5D2" stroke="#C9AE79" stroke-width="1.5"/><rect x="288" y="-37" width="34" height="37" rx="3"
+        fill="#EFE5D2" stroke="#C9AE79" stroke-width="1.5"/>
+  </g>
+
+  <!-- 카운터 -->
+  <rect x="380" y="546" width="840" height="26" rx="6" fill="#FFFFFF" stroke="#DCD2BE" stroke-width="2"/>
+  <rect x="420" y="572" width="760" height="150" fill="url(#soft)" stroke="#DCD2BE" stroke-width="2"/>
+  <line x1="800" y1="572" x2="800" y2="722" stroke="#DCD2BE" stroke-width="1.5"/>
+
+  <!-- 측정 장비 (관절 암) -->
+  <g stroke="#1B2A4A" stroke-width="4" fill="none" stroke-linecap="round">
+    <line x1="1100" y1="546" x2="1100" y2="400"/>
+    <line x1="1100" y1="400" x2="990" y2="330"/>
+  </g>
+  <circle cx="1100" cy="400" r="9" fill="#1B2A4A"/>
+  <ellipse cx="978" cy="323" rx="34" ry="22" fill="#FFFFFF" stroke="#1B2A4A" stroke-width="3.5"/>
+  <ellipse cx="978" cy="323" rx="16" ry="10" fill="#EFE5D2" stroke="#AC8A4C" stroke-width="2"/>
+
+  <!-- 스툴 -->
+  <ellipse cx="330" cy="740" rx="72" ry="20" fill="#FFFFFF" stroke="#DCD2BE" stroke-width="2.5"/>
+  <line x1="330" y1="750" x2="330" y2="840" stroke="#6E665C" stroke-width="4" opacity=".5"/>
+  <ellipse cx="330" cy="846" rx="46" ry="12" fill="none" stroke="#6E665C" stroke-width="3" opacity=".4"/>
+
+  
+  <text x="800" y="914" font-family="'Malgun Gothic',sans-serif" font-size="26"
+        font-weight="700" fill="#6E665C" text-anchor="middle">측정실</text>
+  <text x="800" y="946" font-family="'Malgun Gothic',sans-serif" font-size="15"
+        fill="#6E665C" fill-opacity=".6" text-anchor="middle">오늘의 피부 상태를 확인하고 단계를 정합니다</text>
+  
+  <g>
+    <rect x="28" y="28" width="150" height="30" rx="15" fill="#1B2A4A" opacity=".9"/>
+    <text x="103" y="48" font-family="'Malgun Gothic',sans-serif" font-size="13" font-weight="700"
+          fill="#C9AE79" text-anchor="middle">촬영 전 · 예시 그림</text>
+  </g>
+  <text x="1566" y="966" font-family="Georgia,'Batang',serif" font-size="30"
+        fill="#AC8A4C" fill-opacity=".38" text-anchor="end">測</text>
+</svg>
